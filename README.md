@@ -14,8 +14,8 @@ Features :
 * Each product has an option to add to the cart (only available for logged-in users).
 
 3. Cart Functionality:
-*Users can add items to their cart.
-*Users can view and update the cart.
+* Users can add items to their cart.
+* Users can view and update the cart.
 
 Installation
 
