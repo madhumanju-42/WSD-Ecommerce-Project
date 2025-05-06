@@ -1,0 +1,14 @@
+[
+    {
+      "title": "Wireless Headphones",
+      "price": 59.99,
+      "image": "https://via.placeholder.com/150",
+      "category": "electronics"
+    },
+    {
+      "title": "Casual T-Shirt",
+      "price": 19.99,
+      "image": "https://via.placeholder.com/150",
+      "category": "fashion"
+    }
+  ]

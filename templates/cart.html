@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block title %}Your Cart{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mb-4">Your Cart</h2>
+
+    {% if cart_items %}
+        <table class="table table-striped align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">Image</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Qty</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% with grand_total=0 %}
+                {% for item in cart_items %}
+                    {% with item_total=item.quantity|floatformat:2|add:"0"|floatformat:2 %}
+                        <tr>
+                            <td><img src="{{ item.product.image }}" alt="{{ item.product.title }}" width="60" class="img-thumbnail"></td>
+                            <td>{{ item.product.title }}</td>
+                            <td>{{ item.quantity }}</td>
+                            <td>${{ item.product.price }}</td>
+                            <td>${{ item.total}}</td>
+                            <td>
+                                <a href="{% url 'remove_from_cart' item.product.id %}" class="btn btn-sm btn-outline-danger">Remove</a>
+                            </td>
+                        </tr>
+                    {% endwith %}
+                {% endfor %}
+                {% endwith %}
+            </tbody>
+        </table>
+
+        <div class="d-flex justify-content-between align-items-center mt-4">
+            <h5>
+                Total Amount: 
+                <strong>
+                    ${{ cart_items.cartTotal}}
+                </strong>
+            </h5>
+            <a href="{% url 'checkout' %}" class="btn btn-lg btn-success">Place Order</a>
+        </div>
+    {% else %}
+        <div class="alert alert-info mt-4">
+            Your cart is empty. <a href="{% url 'home' %}">Start shopping →</a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %}
