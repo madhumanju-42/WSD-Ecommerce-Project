@@ -1,17 +1,19 @@
 E-Commerce Website (Django)
+
 This is a simple e-commerce website developed to meet the requirements of my WSD project.
 
-Features
-User Authentication:
+Features :
+
+1. User Authentication:
 * User can sign up with a username and password.
 * User can log in with their credentials.
 * Authentication ensures that users can only add items to the cart when logged in.
 
-Product Management:
+2. Product Management:
 * Product listing page with titles, images, and prices.
 * Each product has an option to add to the cart (only available for logged-in users).
 
-Cart Functionality:
+3. Cart Functionality:
 *Users can add items to their cart.
 *Users can view and update the cart.
 
